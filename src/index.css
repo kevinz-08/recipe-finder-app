@@ -1,1 +1,29 @@
 @import "tailwindcss";
+
+@theme {
+  --color-background: #FFFFFF;
+  --color-surface: #F9FAFB;
+  
+  /*verde principal de tu diseño*/
+  --color-primary: #22C55E;
+  --color-primary-dark: #16A34A;  /* verde para estados hover */
+  
+  /* colores de acento y texto */
+  --color-accent-soft: #DCFCE7;   /* verde muy claro para badges o fondos suaves */
+  --color-text-main: #111827;     /* negro azulado para titulos*/
+  --color-text-muted: #6B7280;    /* gris para descripciones y placeholders */
+
+  /* --- tipografia --- */
+  --font-sans: "Inter", "sans-serif";
+  --font-display: "Inter", "sans-serif";
+
+  /* --- bordes y sombras--- */
+  --radius-lg: 0.75rem;
+  --shadow-figma: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+@layer base {
+  body {
+    @apply bg-background text-text-main font-sans antialiased;
+  }
+}
