@@ -1,2 +1,2 @@
-export { router, ROUTES } from './router';
+export { ROUTES } from './routes';
 export { default as App } from './App';

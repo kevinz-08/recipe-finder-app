@@ -1,22 +1,18 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
-import App from './App'; // Importamos tu nuevo componente base
-import { LandingPage } from '../presentation/pages/LandingPage';
-import { LoginPage } from '../presentation/pages/LoginPage';
-import { DashboardPage } from '../presentation/pages/DashboardPage';
+import App from './App';
+import { ROUTES } from './routes';
 
-export const ROUTES = {
-  HOME: '/',
-  LOGIN: '/login',
-  DASHBOARD: '/dashboard',
-};
+import { LandingPage } from '../pages/LandingPage';
+import { LoginPage } from '../pages/LoginPage';
+import { DashboardPage } from '../pages/DashboardPage';
 
 export const router = createBrowserRouter([
   {
-    path: '/',
-    element: <App />, // este es el "Padre" el cual tiene el Navbar y el <Outlet />
+    path: ROUTES.HOME,
+    element: <App />,
     children: [
       {
-        index: true, // esto hace que la landing sea lo que se ve en la ruta "/"
+        index: true,
         element: <LandingPage />,
       },
       {
