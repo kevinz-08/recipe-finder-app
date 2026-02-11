@@ -9,15 +9,15 @@ Este proyecto es una implementación técnica de referencia para aplicaciones es
 
 ---
 
-## 🏗️ Estructura del Proyecto (Clean Architecture)
+## 🏗️ Estructura del Proyecto
 
-El código está organizado en capas para asegurar que la lógica de negocio sea independiente de las herramientas externas:
+El código está organizado de manera modular para facilitar el mantenimiento y escalabilidad:
 
 * **`src/app/`**: Orquestación global. Contiene el Router, el componente `App` (Layout) y proveedores de contexto.
-* **`src/domain/`**: El "corazón" de la app. Contiene entidades puras y las interfaces (contratos) de los repositorios.
-* **`src/infrastructure/`**: Implementaciones técnicas. Aquí reside la configuración de la **API de Spoonacular**, los repositorios de datos y la lógica de autenticación.
-* **`src/presentation/`**: La capa de UI. Páginas, componentes reutilizables, hooks de React y manejo de estado visual.
-* **`src/shared/`**: Utilidades, constantes y tipos globales compartidos entre todas las capas.
+* **`src/components/`**: Componentes reutilizables. Organizados por funcionalidad (Auth, Profile, Recipe, Search, ShoppingList) y componentes compartidos.
+* **`src/context/`**: Proveedores de contexto para autenticación y gestión de recetas.
+* **`src/hooks/`**: Hooks personalizados de React para lógica reutilizable.
+* **`src/pages/`**: Componentes de páginas principales de la aplicación.
 
 ---
 
