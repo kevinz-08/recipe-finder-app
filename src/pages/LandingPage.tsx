@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { ROUTES } from "../app/routes";
 import { Button } from "../components/shared";
-import type { ButtonProps } from "../components/shared";
 
 export const LandingPage = () => {
   return (
@@ -22,7 +21,7 @@ export const LandingPage = () => {
         size="medium"
         disabled={false}
         color="#22C55E"
-        label="Comienza Ahora"
+        children="Comienza Ahora"
         width="fit-content"
       />
       </Link>
