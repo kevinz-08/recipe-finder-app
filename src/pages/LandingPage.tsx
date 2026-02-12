@@ -17,13 +17,9 @@ export const LandingPage = () => {
       </Link>
 
       <Link to={ROUTES.LOGIN}>
-      <Button
-        size="medium"
-        disabled={false}
-        color="#22C55E"
-        children="Comienza Ahora"
-        width="fit-content"
-      />
+      <Button>
+        Comienza Ahora
+      </Button>
       </Link>
 
     </div>

@@ -1,11 +1,12 @@
 import type { ReactNode } from "react";
 
 export type ButtonSize = "small" | "medium" | "large";
+export type ButtonVariant = "primary" | "secondary" | "danger";
 
 export interface ButtonProps {
     size?: ButtonSize;
+    variant?: ButtonVariant;
     disabled?: boolean;
-    color?: string;
     children: ReactNode;
     width?: 'fit-content' | 'full-width';
     onClick?: () => void;
