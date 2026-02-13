@@ -19,33 +19,45 @@ const App = () => {
             <a href="/#hero" className="hover:text-primary transition-colors">
               Inicio
             </a>
-            <a href="/#how-work" className="hover:text-primary transition-colors">
+            <a
+              href="/#how-work"
+              className="hover:text-primary transition-colors"
+            >
               Cómo funciona
             </a>
-            <a href="/#recipes" className="hover:text-primary transition-colors">
+            <a
+              href="/#recipes"
+              className="hover:text-primary transition-colors"
+            >
               Recetas
             </a>
-            <a href="/#contact" className="hover:text-primary transition-colors">
+            <a
+              href="/#contact"
+              className="hover:text-primary transition-colors"
+            >
               Contacto
             </a>
 
             {/* Contact */}
             <Link to={ROUTES.LOGIN}>
-              <Button size='medium'>
-                Comienza
-              </Button>
+              <Button size="medium">Comienza</Button>
             </Link>
           </div>
         </div>
       </nav>
 
-      <main className=''>
+      <main className="">
         {/* outlet es donde react router en este caso inyectara la página actual*/}
         <Outlet />
       </main>
 
-      <footer className="py-8 text-center text-slate-400 text-sm">
-        &copy; {new Date().getFullYear()} Recipe Finder App - By KevingaDev
+      <footer className="bg-slate-200 py-10 text-center text-slate-600 text-sm">
+        <div className="max-w-7xl mx-auto px-6">
+          <p>
+            &copy; {new Date().getFullYear()} Recipe Finder App — By{" "}
+            <span className="text-slate-800 font-medium">KevingaDev</span>
+          </p>
+        </div>
       </footer>
     </div>
   );
