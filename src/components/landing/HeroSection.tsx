@@ -6,7 +6,7 @@ import heroPhoto from "../../assets/images/hero-photo.jpg";
 
 export const HeroSection = () => {
     return (
-    <section className="bg-background py-5">
+    <section className="bg-background py-25" id="hero">
         <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* lado izquierdo */}
@@ -24,8 +24,8 @@ export const HeroSection = () => {
             </p>
 
             <Link to={ROUTES.LOGIN}>
-                <Button size="large" width="fit-content">
-                Comenzar Ahora
+                <Button size="large" width="fit-content" variant="primary">
+                Empieza Ahora
                 </Button>
             </Link>
             </div>

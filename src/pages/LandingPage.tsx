@@ -1,14 +1,18 @@
 // import { Link } from "react-router-dom";
 // import { ROUTES } from "../app/routes";
-import { HeroSection, CTAsection } from "../components/landing";
+import { HeroSection, HowWorkSection, RecipeSection, ContactSection } from "../components/landing";
+import { useScrollToHash } from "../hooks/useScrollTohash";
 
 export const LandingPage = () => {
+  useScrollToHash();
+
   return (
 
-    <div className="flex flex-col items-center justify-center min-h-screen bg-slate-50">
+    <div className="">
       <HeroSection />
-
-      <CTAsection />
+      <HowWorkSection />
+      <RecipeSection />
+      <ContactSection />
 
 
     </div>

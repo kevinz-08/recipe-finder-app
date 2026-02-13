@@ -1,2 +1,4 @@
 export { HeroSection } from "./HeroSection";
-export { CTAsection } from "./CTASection";
+export { ContactSection } from './ContactSection';
+export { RecipeSection } from './RecipeSection';
+export { HowWorkSection } from './HowWorkSection';

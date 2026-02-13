@@ -2,9 +2,9 @@ import { Link } from "react-router-dom"
 import { ROUTES } from "../../app";
 // import { Button } from "../shared"
 
-export const CTAsection = () => {
+export const ContactSection = () => {
     return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-slate-50">
+    <section id="contact" className="flex flex-col items-center justify-center min-h-screen bg-slate-50">
 
         <h1 className="text-3xl font-bold text-slate-800">Zona del CallToAction</h1>
         <p className="text-slate-600">Bienvenido</p>
@@ -17,6 +17,6 @@ export const CTAsection = () => {
             Prueba Dasboard
         </Link>
 
-    </div>
+    </section>
     )
 }
