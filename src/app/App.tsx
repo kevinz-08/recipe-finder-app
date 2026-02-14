@@ -1,5 +1,4 @@
 import { Link, Outlet } from 'react-router-dom';
-import { HeroSection, HowWorkSection, RecipeSection, ContactSection } from '../components/landing';
 import { Button } from '../components/shared';
 import { ROUTES } from './routes';
 import { logo } from '../assets/images';
