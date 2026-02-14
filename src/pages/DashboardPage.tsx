@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ROUTES } from "../app/routes";
+import { ROUTES } from "@/app/routes";
 
 export const DashboardPage = () => {
   return (

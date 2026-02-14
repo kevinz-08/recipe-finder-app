@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { ROUTES } from "../../app";
+import { ROUTES } from "@/app";
 import { Button } from "../shared";
-import heroPhoto from "../../assets/images/hero-photo.jpg";
+import heroPhoto from "@/assets/images/hero-photo.jpg";
 
 
 export const HeroSection = () => {

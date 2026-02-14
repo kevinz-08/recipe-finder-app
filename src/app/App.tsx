@@ -1,7 +1,7 @@
 import { Link, Outlet } from 'react-router-dom';
-import { Button } from '../components/shared';
+import { Button } from '@/components/shared';
 import { ROUTES } from './routes';
-import { logo } from '../assets/images';
+import { logo } from '@/assets/images';
 
 const App = () => {
   return (

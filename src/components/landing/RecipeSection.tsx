@@ -1,4 +1,4 @@
-import { pastaRecipe, saladRecipe, bowlRecipe, toastRecipe } from "../../assets/images";
+import { pastaRecipe, saladRecipe, bowlRecipe, toastRecipe } from "@/assets/images";
 
 import { Clock } from "lucide-react";
 

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { ROUTES } from "../../app";
+import { ROUTES } from "@/app";
 import { ArrowUpRight, Sparkles } from "lucide-react";
 import { Button } from "../shared"
 
