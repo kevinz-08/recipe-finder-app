@@ -1,5 +1,3 @@
-// import { Link } from "react-router-dom";
-// import { ROUTES } from "../app/routes";
 import { HeroSection, HowWorkSection, RecipeSection, ContactSection } from "@/components/landing";
 import { useScrollToHash } from "@/hooks";
 
@@ -8,7 +6,7 @@ export const LandingPage = () => {
 
   return (
 
-    <div className="">
+    <div className="pt-15">
       <HeroSection />
       <HowWorkSection />
       <RecipeSection />

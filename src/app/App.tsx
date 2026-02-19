@@ -39,7 +39,7 @@ const App = () => {
         </div>
       </nav>
 
-      <main className="">
+      <main className="pt-10">
         {/* outlet es donde react router en este caso inyectara la página actual*/}
         <Outlet />
       </main>

@@ -5,7 +5,7 @@ import { Button } from "../shared"
 
 export const ContactSection = () => {
     return (
-    <section id="contact" className="py-28 bg-gradient-to-r from-emerald-200 via-emerald-100 to-orange-200 scroll-mt-24">
+    <section id="contact" className="py-28 bg-gradient-to-r from-emerald-200 via-emerald-100 to-orange-200 scroll-mt-15">
         <div className="max-w-5xl mx-auto px-6 text-center">
           {/* titulo */}
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900">

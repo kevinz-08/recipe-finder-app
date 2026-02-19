@@ -1,10 +1,10 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import App from './App';
 import { ROUTES } from './routes';
-
 import { LandingPage } from '../pages/LandingPage';
 import { LoginPage } from '../pages/LoginPage';
 import { DashboardPage } from '../pages/DashboardPage';
+import ProtectedRoute from '@/pages/ProtectedRoute';
 
 export const router = createBrowserRouter([
   {
@@ -20,13 +20,18 @@ export const router = createBrowserRouter([
         element: <LoginPage />,
       },
       {
-        path: ROUTES.DASHBOARD,
-        element: <DashboardPage />,
+        element: <ProtectedRoute />,
+        children: [
+          {
+            path: ROUTES.DASHBOARD,
+            element: <DashboardPage />,
+          },
+        ],
       },
     ],
   },
   {
-    path: '*',
+    path: "*",
     element: <Navigate to={ROUTES.HOME} replace />,
   },
 ]);

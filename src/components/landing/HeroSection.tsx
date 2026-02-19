@@ -6,7 +6,7 @@ import heroPhoto from "@/assets/images/hero-photo.jpg";
 
 export const HeroSection = () => {
     return (
-    <section className="bg-background py-25" id="hero">
+    <section className="bg-background scroll-mt-25" id="hero">
         <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* lado izquierdo */}
