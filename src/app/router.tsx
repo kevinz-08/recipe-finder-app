@@ -1,23 +1,20 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
-import App from './App';
+import MainLayout from './MainLayout';
+import AuthLayout from './AuthLayout';
 import { ROUTES } from './routes';
 import { LandingPage } from '../pages/LandingPage';
 import { LoginPage } from '../pages/LoginPage';
 import { DashboardPage } from '../pages/DashboardPage';
 import ProtectedRoute from '@/pages/ProtectedRoute';
+import { RegisterPage } from '@/pages/RegisterPage';
 
 export const router = createBrowserRouter([
   {
-    path: ROUTES.HOME,
-    element: <App />,
+    element: <MainLayout />,
     children: [
       {
-        index: true,
+        path: ROUTES.HOME,
         element: <LandingPage />,
-      },
-      {
-        path: ROUTES.LOGIN,
-        element: <LoginPage />,
       },
       {
         element: <ProtectedRoute />,
@@ -27,6 +24,19 @@ export const router = createBrowserRouter([
             element: <DashboardPage />,
           },
         ],
+      },
+    ],
+  },
+  {
+    element: <AuthLayout />,
+    children: [
+      {
+        path: ROUTES.LOGIN,
+        element: <LoginPage />,
+      },
+      {
+        path: ROUTES.REGISTER,
+        element: <RegisterPage />,
       },
     ],
   },
