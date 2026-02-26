@@ -5,5 +5,9 @@ import { useAuth } from "@/components/Auth/AuthProvider";
 export default function ProtectedRoute() {
     const auth = useAuth()
 
+    if (auth.loading) {
+        return <div>Loading...</div>; // puedes poner spinner aquí
+    }
+
     return auth.isAuthenticated ? <Outlet /> : <Navigate to={ROUTES.HOME} />;
 }

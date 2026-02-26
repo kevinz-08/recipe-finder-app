@@ -1,16 +1,55 @@
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { ROUTES } from "@/app/routes";
 import { logo2 } from '@/assets/images';
 import { useState } from "react";
 import { useAuth } from "@/components/Auth/AuthProvider";
+import { API_URL } from "@/components/Auth/constants";
+import type { AuthResponse, AuthResponseError } from "@/types/types";
 
 export const LoginPage = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorResponse, setErrorResponse] = useState("");
+  const goTo = useNavigate();
+  const auth = useAuth();
 
-      const auth = useAuth();
-    if (auth.isAuthenticated) {
+      async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+          e.preventDefault();
+  
+          try {
+              const response = await fetch (`${API_URL}/login`, {
+                  method:"POST",
+                  headers: {
+                      "Content-Type": "application/json"
+                  },
+                  body: JSON.stringify({
+                      email,
+                      password
+                  }),
+              });
+  
+              if(response.ok){
+                  console.log("El usuario fue logeado con exito");
+                  setErrorResponse("");
+                  const json = (await response.json()) as AuthResponse;
+                  if (json.body.accessToken && json.body.refreshToken) {
+                    auth.saveUser(json);
+                    goTo("/dashboard");
+                  }
+                  
+              }else{
+                  console.log("Algo ocurrio");
+                  const json = await response.json() as AuthResponseError;
+                  setErrorResponse(json.body.error);
+                  return;
+              }
+          } catch (error) {
+              console.log(error);
+          }
+      }
+
+  if (auth.isAuthenticated) {
         return <Navigate to={ROUTES.DASHBOARD}/>
     }
 
@@ -29,10 +68,11 @@ export const LoginPage = () => {
           <p className="text-gray-500 mt-2">
             Inicia sesión para continuar cocinando
           </p>
+          {!!errorResponse && <div className="text-red-500 mt-2">{errorResponse}</div>}
         </div>
 
         {/* form */}
-        <form className="space-y-5">
+        <form className="space-y-5" onSubmit={handleSubmit}>
           {/* email */}
           <div>
             <label className="block text-sm text-gray-700 mb-2">

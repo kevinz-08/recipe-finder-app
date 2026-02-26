@@ -1,15 +1,52 @@
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { ROUTES } from "@/app/routes";
 // import { useAuth } from "@/components/Auth/AuthProvider";
 import { useState } from "react";
 import { logo2 } from '@/assets/images';
 import { useAuth } from "@/components/Auth/AuthProvider";
+import { API_URL } from "@/components/Auth/constants";
+import type { AuthResponseError } from "@/types/types";
 
 export const RegisterPage = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const [errorResponse, setErrorResponse] = useState("");
+    const goTo = useNavigate();
+
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+
+        try {
+            const response = await fetch (`${API_URL}/register`, {
+                method:"POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    password,
+                    confirmPassword
+                }),
+            });
+
+            if(response.ok){
+                console.log("El usuario fue creado con exito");
+                setErrorResponse("");
+
+                goTo("/login")
+            }else{
+                console.log("Algo ocurrio");
+                const json = await response.json() as AuthResponseError;
+                setErrorResponse(json.body.error);
+                return;
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     const auth = useAuth();
     if (auth.isAuthenticated) {
@@ -32,9 +69,10 @@ export const RegisterPage = () => {
         <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-gray-800">Crea tu cuenta</h1>
             <p className="text-gray-500 mt-2">¡Crea tu Cuenta para comenzar a cocinar!</p>
+            {!!errorResponse && <div className="text-red-500 mt-2">{errorResponse}</div>}
         </div>
 
-        <form className="space-y-2">
+        <form onSubmit={handleSubmit}  autoComplete="off" className="space-y-2">
             {/* nombre */}
             <div>
             <label className="block text-sm text-gray-700 mb-2">
@@ -57,6 +95,7 @@ export const RegisterPage = () => {
             <input
                 type="email"
                 placeholder="tucorreo@example.com"
+                autoComplete="email"
                 className="w-full px-4 py-2 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary transition"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -71,6 +110,7 @@ export const RegisterPage = () => {
             <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Mínimo 8 caracteres"
+                autoComplete="new-password"
                 className="w-full px-4 py-2 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary transition"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
