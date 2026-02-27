@@ -4,7 +4,6 @@ import { useAuth } from "@/components/Auth/AuthProvider";
 import { useState } from "react";
 import { API_URL } from "@/components/Auth/constants";
 import { useEffect } from "react";
-import PortalLayout from "@/app/PortalLayout";
 
 interface Todo {
   id: string;
