@@ -2,9 +2,13 @@ import { Link } from "react-router-dom";
 import { ROUTES } from "@/app";
 import { Button } from "../shared";
 import heroPhoto from "@/assets/images/hero-photo.jpg";
+import { useAuth } from "../Auth/AuthProvider";
 
 
 export const HeroSection = () => {
+    const auth = useAuth();
+    const isLogged = auth.isAuthenticated;
+
     return (
     <section className="bg-background scroll-mt-25" id="hero">
         <div className="max-w-7xl mx-auto px-6">
@@ -23,9 +27,9 @@ export const HeroSection = () => {
                 tienes en casa. Sin desperdicio, sin complicaciones.
             </p>
 
-            <Link to={ROUTES.LOGIN}>
+            <Link to={isLogged ? ROUTES.DASHBOARD : ROUTES.LOGIN}>
                 <Button size="large" width="fit-content" variant="primary">
-                Empieza Ahora
+                {isLogged ? "Ir al Dashboard" : "Empieza"}
                 </Button>
             </Link>
             </div>
