@@ -79,23 +79,25 @@ export function AuthProvider({children}: AuthProviderProps){
     }
 
     async function checkAuth() {
+
         const refreshToken = getRefreshToken();
 
         if (!refreshToken) {
-        setLoading(false);
-        return;
+            setLoading(false);
+            return;
         }
 
         const newAccessToken = await requestNewAccessToken(refreshToken);
         if (!newAccessToken) {
-        setLoading(false);
-        return;
+            setLoading(false);
+            return;
         }
 
         const userInfo = await getUserInfo(newAccessToken);
+
         if (!userInfo) {
-        setLoading(false);
-        return;
+            setLoading(false);
+            return;
         }
 
         saveSessionInfo(userInfo, newAccessToken, refreshToken);
@@ -106,7 +108,7 @@ export function AuthProvider({children}: AuthProviderProps){
         setIsAuthenticated(false);
         setAccessToken("");
         setUser(undefined);
-        localStorage.removeItem("token");
+        localStorage.removeItem("refreshToken");
     }
 
     function saveSessionInfo(userInfo:User, accessToken:string, refreshToken:string){
