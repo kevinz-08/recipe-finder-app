@@ -1,4 +1,3 @@
-import React, { type ReactNode } from "react";
 import { useAuth } from "@/components/Auth/AuthProvider";
 import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -68,7 +67,7 @@ export default function PortalLayout() {
       </nav>
 
       <main className="pt-10">
-        {/* children es donde react router en este caso inyectara la página actual*/}
+        {/* children es donde react router en este caso inyectara la pagina actual*/}
             <Outlet />
       </main>
 

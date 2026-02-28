@@ -27,7 +27,7 @@ const AuthContext = createContext({
     isAuthenticated: false, // isAuthenticated, la cual verifica si el usuario esta autenticado o no 
     loading: true, // si aun esta verificando sesion
     getAccessToken: () => {}, // obtiene el token
-    saveUser: (userData:AuthResponse) => {}, // guardar el usuario
+    saveUser: (_userData:AuthResponse) => {}, // guardar el usuario
     getRefreshToken: () => {},
     getUser:() => ({} as User | undefined), // obtener el usuario actual
     signOut: () => {}, // cerrar sesion
