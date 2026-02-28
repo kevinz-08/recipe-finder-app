@@ -6,7 +6,7 @@ export default function ProtectedRoute() {
     const auth = useAuth()
 
     if (auth.loading) {
-        return <div>Loading...</div>; // puedes poner spinner aquí
+        return <div>Loading...</div>;
     }
 
     return auth.isAuthenticated ? <Outlet /> : <Navigate to={ROUTES.HOME} />;
