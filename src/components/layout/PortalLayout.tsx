@@ -1,10 +1,10 @@
-import { useAuth } from "@/components/auth/AuthProvider";
+import { useAuth } from "@/components/authentication/AuthProvider";
 import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { ROUTES } from '@/app';
 import { logo } from "@/assets/images";
 import { Button } from "@/components/shared";
-import { API_URL } from "@/components/auth/constants";
+import { API_URL } from "@/components/authentication/constants";
 
 
 export default function PortalLayout() {

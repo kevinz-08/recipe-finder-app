@@ -1,7 +1,7 @@
 import { Link, Navigate } from "react-router-dom";
 import { ROUTES } from "@/app/routes";
 import { logo2 } from "@/assets/images";
-import { useAuth } from "@/components/auth/AuthProvider";
+import { useAuth } from "@/components/authentication/AuthProvider";
 import { useRegister } from "@/hooks/useRegister";
 
 export const RegisterPage = () => {

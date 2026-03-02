@@ -1,4 +1,4 @@
-import { API_URL } from "@/components/auth/constants";
+import { API_URL } from "@/components/authentication/constants";
 import type { AuthResponse, AuthResponseError } from "@/types/types";
 
 export async function loginRequest(email: string, password: string) {

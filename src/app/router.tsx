@@ -6,7 +6,7 @@ import { ROUTES } from "./routes";
 import { LandingPage } from "../pages/LandingPage";
 import { LoginPage } from "../pages/LoginPage";
 import { DashboardPage } from "../pages/DashboardPage";
-import ProtectedRoute from "@/components/auth/ProtectedRoute";
+import ProtectedRoute from "@/components/authentication/ProtectedRoute";
 import { RegisterPage } from "@/pages/RegisterPage";
 
 export const router = createBrowserRouter([

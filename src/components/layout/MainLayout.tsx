@@ -2,7 +2,7 @@ import { Link, Outlet } from 'react-router-dom';
 import { Button } from '@/components/shared';
 import { ROUTES } from '@/app';
 import { logo } from '@/assets/images';
-import { useAuth } from '../auth/AuthProvider';
+import { useAuth } from '../authentication/AuthProvider';
 
 const MainLayout = () => {
   const auth = useAuth();
