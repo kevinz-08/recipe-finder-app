@@ -1,9 +1,13 @@
 import { Link, Outlet } from 'react-router-dom';
 import { Button } from '@/components/shared';
-import { ROUTES } from './routes';
+import { ROUTES } from '@/app';
 import { logo } from '@/assets/images';
+import { useAuth } from '../auth/AuthProvider';
 
 const MainLayout = () => {
+  const auth = useAuth();
+  const isLogged = auth.isAuthenticated;
+
   return (
     <div className="min-h-screen bg-slate-50 font-sans antialiased text-slate-900">
       {/* navbar */}
@@ -33,7 +37,9 @@ const MainLayout = () => {
             </a>
 
             <Link to={ROUTES.LOGIN}>
-              <Button size="medium">Comienza</Button>
+              <Button size="medium">
+                {isLogged ? "Ir al Dashboard" : "Comienza"}
+              </Button>
             </Link>
           </div>
         </div>

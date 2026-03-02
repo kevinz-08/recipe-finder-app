@@ -1,7 +1,7 @@
 import { Link, Navigate } from "react-router-dom";
 import { ROUTES } from "@/app/routes";
 import { logo2 } from "@/assets/images";
-import { useAuth } from "@/components/Auth/AuthProvider";
+import { useAuth } from "@/components/auth/AuthProvider";
 import { useRegister } from "@/hooks/useRegister";
 
 export const RegisterPage = () => {
@@ -111,7 +111,7 @@ export const RegisterPage = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-2 rounded-xl bg-[#E8B48A] text-white font-semibold shadow-md hover:opacity-90 transition"
+            className="w-full py-3 rounded-xl bg-gradient-to-r from-orange-600 to-orange-800 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
           >
             {loading ? "Creando..." : "Crear Cuenta"}
           </button>

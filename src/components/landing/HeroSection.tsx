@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ROUTES } from "@/app";
 import { Button } from "../shared";
 import heroPhoto from "@/assets/images/hero-photo.jpg";
-import { useAuth } from "../Auth/AuthProvider";
+import { useAuth } from "../auth/AuthProvider";
 
 
 export const HeroSection = () => {

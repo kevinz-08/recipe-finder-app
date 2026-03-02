@@ -1,12 +1,12 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import MainLayout from "./MainLayout";
-import PortalLayout from "./PortalLayout";
-import AuthLayout from "./AuthLayout";
+import MainLayout from "@/components/layout/MainLayout";
+import PortalLayout from "@/components/layout/PortalLayout";
+import AuthLayout from "../components/layout/AuthLayout";
 import { ROUTES } from "./routes";
 import { LandingPage } from "../pages/LandingPage";
 import { LoginPage } from "../pages/LoginPage";
 import { DashboardPage } from "../pages/DashboardPage";
-import ProtectedRoute from "@/pages/ProtectedRoute";
+import ProtectedRoute from "@/components/auth/ProtectedRoute";
 import { RegisterPage } from "@/pages/RegisterPage";
 
 export const router = createBrowserRouter([

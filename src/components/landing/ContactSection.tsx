@@ -2,8 +2,12 @@ import { Link } from "react-router-dom"
 import { ROUTES } from "@/app";
 import { ArrowUpRight, Sparkles } from "lucide-react";
 import { Button } from "../shared"
+import { useAuth } from "../auth/AuthProvider";
 
 export const ContactSection = () => {
+    const auth = useAuth();
+    const isLogged = auth.isAuthenticated;
+
     return (
     <section id="contact" className="py-28 bg-gradient-to-r from-emerald-200 via-emerald-100 to-orange-200 scroll-mt-15">
         <div className="max-w-5xl mx-auto px-6 text-center">
@@ -20,7 +24,9 @@ export const ContactSection = () => {
           {/* botones */}
         <div className="mt-10 flex flex-col sm:flex-row justify-center gap-6">
             <Link to={ROUTES.LOGIN}>
-            <Button size="large">Empieza Gratis</Button>
+            <Button size="large">
+                {isLogged ? "Ir al Dashboard" : "Empieza Gratis"}
+            </Button>
             </Link>
 
             <button className="px-8 py-4 rounded-full border border-slate-400 text-slate-800 font-medium hover:bg-white/40 transition">

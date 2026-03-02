@@ -1,7 +1,7 @@
 import { Link, Navigate } from "react-router-dom";
 import { ROUTES } from "@/app/routes";
 import { logo2 } from "@/assets/images";
-import { useAuth } from "@/components/Auth/AuthProvider";
+import { useAuth } from "@/components/auth/AuthProvider";
 import { useLogin } from "@/hooks/useLogin";
 
 export const LoginPage = () => {
@@ -68,7 +68,7 @@ export const LoginPage = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 rounded-xl bg-gradient-to-r from-[#A8C5B0] to-[#7CBF9B] text-white font-semibold shadow-md hover:opacity-90 transition"
+            className="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-800 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
           >
             {loading ? "Cargando..." : "Iniciar Sesión"}
           </button>
