@@ -3,6 +3,7 @@ import { ROUTES } from "@/app/routes";
 import { logo2 } from "@/assets/images";
 import { useAuth } from "@/components/authentication/AuthProvider";
 import { useLogin } from "@/hooks/useLogin";
+import { Button } from "@/components/shared";
 
 export const LoginPage = () => {
   const auth = useAuth();
@@ -65,13 +66,14 @@ export const LoginPage = () => {
             />
           </div>
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-800 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+          <Button
+          type="submit"
+          disabled={loading}
+          variant="primary"
+          className="w-full"
           >
             {loading ? "Cargando..." : "Iniciar Sesión"}
-          </button>
+          </Button>
         </form>
 
         <p className="text-center text-sm text-gray-500 mt-6">

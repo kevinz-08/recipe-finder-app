@@ -3,6 +3,7 @@ import { ROUTES } from "@/app/routes";
 import { logo2 } from "@/assets/images";
 import { useAuth } from "@/components/authentication/AuthProvider";
 import { useRegister } from "@/hooks/useRegister";
+import { Button } from "@/components/shared";
 
 export const RegisterPage = () => {
   const auth = useAuth();
@@ -108,13 +109,11 @@ export const RegisterPage = () => {
             />
           </div>
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full py-3 rounded-xl bg-gradient-to-r from-orange-600 to-orange-800 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+          <Button
+            type="submit" disabled={loading} className="w-full" variant="secondary"
           >
             {loading ? "Creando..." : "Crear Cuenta"}
-          </button>
+          </Button>
         </form>
 
         <p className="text-center text-sm text-gray-500 mt-6">
