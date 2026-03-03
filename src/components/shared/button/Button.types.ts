@@ -11,4 +11,5 @@ export interface ButtonProps {
     width?: 'fit-content' | 'full-width';
     onClick?: () => void;
     type?: "button" | "submit" | "reset";
+    className?: string;
 }
