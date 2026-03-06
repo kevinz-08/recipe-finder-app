@@ -1,18 +1,30 @@
-import { Link } from "react-router-dom";
-import { ROUTES } from "@/app/routes";
-import { useAuth } from "@/components/authentication/AuthProvider";
+// import { Link } from "react-router-dom";
+// import { ROUTES } from "@/app/routes";
+import { WelcomeCard } from "@/components/dashboard/WelcomeCard";
+import { StatCard } from "@/components/dashboard/StatCard";
+import { BookOpen, Calendar, Heart, ShoppingCart } from "lucide-react";
+import { RecipeActivityCard } from "@/components/dashboard/RecipeActivityCard";
+import {ShoppingListCard} from "@/components/dashboard/ShoppingListCard";
+// import PopularCategoriesCard from "@/components/dashboard/PopularCategoriesCard";
+// import RecentRecipesTableCard from "@/components/dashboard/RecentRecipesTableCard";
 
 export const DashboardDemoPage = () => {
-  const auth = useAuth();
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-slate-50">
-      <h1 className="text-3xl font-bold text-slate-800">Dashboard</h1>
-      <p className="text-slate-600">Bienvenid@ {auth.getUser() ?.name || ""} </p>
+    <>
+      <WelcomeCard />
 
-      <Link to={ROUTES.HOME} className="mt-4 text-blue-500 underline">
-        Volver a Landing
-      </Link>
-    </div>
+      <section className="flex flex-row gap-4">
+        <StatCard title="Recetas Guardadas" value={248} icon={<BookOpen />} />
+        <StatCard title="Planes Semanales" value={7} icon={<Calendar />} />
+        <StatCard title="Favoritas" value={53} icon={<Heart />} />
+        <StatCard title="Ingredientes" value={124} icon={<ShoppingCart />} />
+      </section>
+
+      <section className="flex flex-row">
+        <RecipeActivityCard />
+        <ShoppingListCard />
+      </section>
+    </>
   );
 };
