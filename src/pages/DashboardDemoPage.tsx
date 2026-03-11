@@ -3,8 +3,8 @@
 import { WelcomeCard } from "@/components/dashboard/WelcomeCard";
 import { StatCard } from "@/components/dashboard/StatCard";
 import { BookOpen, Calendar, Heart, ShoppingCart } from "lucide-react";
-import { RecipeActivityCard } from "@/components/dashboard/RecipeActivityCard";
-import {ShoppingListCard} from "@/components/dashboard/ShoppingListCard";
+// import { RecipeActivityCard } from "@/components/dashboard/RecipeActivityCard";
+// import {ShoppingListCard} from "@/components/dashboard/ShoppingListCard";
 // import PopularCategoriesCard from "@/components/dashboard/PopularCategoriesCard";
 // import RecentRecipesTableCard from "@/components/dashboard/RecentRecipesTableCard";
 
@@ -22,8 +22,8 @@ export const DashboardDemoPage = () => {
       </section>
 
       <section className="flex flex-row">
-        <RecipeActivityCard />
-        <ShoppingListCard />
+        {/* <RecipeActivityCard /> */}
+        {/* <ShoppingListCard /> */}
       </section>
     </>
   );

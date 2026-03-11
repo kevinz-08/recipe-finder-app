@@ -6,7 +6,7 @@ export default function PortalLayout() {
     return (
       <div className="flex">
         <Sidebar />
-        <main className="bg-slate-50 flex-1 p-8">
+        <main className="bg-slate-50 md:ml-64 flex-1 p-8">
           {/* children es donde react router en este caso inyectara la pagina actual*/}
           <Outlet />
         </main>

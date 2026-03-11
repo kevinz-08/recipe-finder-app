@@ -16,6 +16,9 @@ const navItems = [
 
 export default function Sidebar() {
   const auth = useAuth();
+  const user = auth.getUser();
+
+  const firstLetter = user?.name?.charAt(0).toUpperCase() || "U";
 
   const [showConfirm, setShowConfirm] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -42,8 +45,7 @@ export default function Sidebar() {
     <>
       {/* boton hamburguesa para movil */}
       <button
-        className="md:hidden fixed top-4 left-4 z-[10000] bg-white p-2 rounded-lg shadow"
-        onClick={() => setIsOpen(true)}
+        className="md:hidden fixed top-4 left-4 z-[10000] bg-white p-2 rounded-lg shadow" onClick={() => setIsOpen(true)}
       >
         <Menu size={22} />
       </button>
@@ -58,14 +60,9 @@ export default function Sidebar() {
 
       {/* sidebar */}
       <aside
-        className={`
-        fixed top-0 left-0 h-screen w-64 bg-white flex flex-col justify-between
-        transform transition-transform duration-300 z-[9999]
-
-        ${isOpen ? "translate-x-0" : "-translate-x-full"}
-
-        md:translate-x-0 md:static md:flex
-      `}
+        className={`fixed top-0 left-0 h-screen w-64 bg-white flex flex-col justify-between  transform transition-transform duration-300 z-[9999]
+          ${isOpen ? "translate-x-0" : "-translate-x-full"}
+          md:translate-x-0`}
       >
         {/* top section */}
         <div>
@@ -76,7 +73,6 @@ export default function Sidebar() {
             </button>
           </div>
 
-          {/* logo */}
           <Link to={ROUTES.HOME} className="flex items-center gap-3 px-6 py-6">
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-200 to-orange-200 flex items-center justify-center shadow-sm">
               <ChefHat className="text-green-600" size={20} />
@@ -87,7 +83,7 @@ export default function Sidebar() {
             </h1>
           </Link>
 
-          {/* NAVIGATION */}
+          {/* navigation */}
           <nav className="mt-4 px-4 space-y-2">
             {navItems.map((item) => {
               const Icon = item.icon;
@@ -123,20 +119,22 @@ export default function Sidebar() {
           </nav>
         </div>
 
-        {/* user section */}
+        {/* user */}
         <div className="p-4">
           <div className="flex items-center justify-between bg-yellow-50 rounded-xl px-4 py-3">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-full bg-gradient-to-br from-green-200 to-orange-200 flex items-center justify-center text-sm font-semibold text-white">
-                K
+                {firstLetter}
               </div>
 
               <div>
                 <p className="text-sm font-medium text-gray-800">
-                  Kevin Santiago
+                  {user?.name || "Usuario"}
                 </p>
 
-                <p className="text-xs text-gray-500">santi@email.com</p>
+                <p className="text-xs text-gray-500">
+                  {user?.email || "email@domain.com"}
+                </p>
               </div>
             </div>
 
