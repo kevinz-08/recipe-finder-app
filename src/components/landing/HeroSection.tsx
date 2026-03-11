@@ -27,11 +27,19 @@ export const HeroSection = () => {
                 tienes en casa. Sin desperdicio, sin complicaciones.
             </p>
 
+            <div>
             <Link to={isLogged ? ROUTES.DASHBOARD : ROUTES.LOGIN}>
                 <Button size="large" width="fit-content" variant="primary">
                 {isLogged ? "Ir al Dashboard" : "Empieza"}
                 </Button>
             </Link>
+            <Link to={ROUTES.DEMO} className="px-4">
+                <Button size="large" width="fit-content" variant="secondary">
+                Ver Demo
+                </Button>
+            </Link>
+            </div>
+
             </div>
 
             {/* lado derecho */}

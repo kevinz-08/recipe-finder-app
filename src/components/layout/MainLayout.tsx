@@ -1,7 +1,7 @@
 import { Link, Outlet } from 'react-router-dom';
 import { Button } from '@/components/shared';
 import { ROUTES } from '@/app';
-import { logo } from '@/assets/images';
+import { Images } from '@/assets/images';
 import { useAuth } from '../authentication/AuthProvider';
 
 const MainLayout = () => {
@@ -15,7 +15,7 @@ const MainLayout = () => {
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           {/* logo */}
           <Link to={ROUTES.HOME} className="flex items-center gap-3">
-            <img src={logo} alt="Recipe Finder Logo" className="w-13 h-13 object-contain"/>
+            <img src={Images.logo} alt="Recipe Finder Logo" className="w-13 h-13 object-contain"/>
             <h1 className="text-primary text-2xl font-bold tracking-tight">
               Recipe Finder
             </h1>

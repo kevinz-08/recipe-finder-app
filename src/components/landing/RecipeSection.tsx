@@ -1,29 +1,29 @@
-import { pastaRecipe, saladRecipe, bowlRecipe, toastRecipe } from "@/assets/images";
+import { Images } from "@/assets/images";
 
 import { Clock } from "lucide-react";
 
 const recipes = [
     {
     title: "Pasta Primavera",
-    image: pastaRecipe,
+    image: Images.pastaRecipe,
     time: "25 min",
     difficulty: "Fácil",
     },
     {
     title: "Ensalada Fresca",
-    image: saladRecipe,
+    image: Images.saladRecipe,
     time: "15 min",
     difficulty: "Muy Fácil",
     },
     {
     title: "Bowl Asiático",
-    image: bowlRecipe,
+    image: Images.bowlRecipe,
     time: "30 min",
     difficulty: "Media",
     },
     {
     title: "Tostadas de Aguacate",
-    image: toastRecipe,
+    image: Images.toastRecipe,
     time: "10 min",
     difficulty: "Muy Fácil",
     },

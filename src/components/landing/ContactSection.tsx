@@ -9,7 +9,7 @@ export const ContactSection = () => {
     const isLogged = auth.isAuthenticated;
 
     return (
-    <section id="contact" className="py-28 bg-gradient-to-r from-emerald-200 via-emerald-100 to-orange-200 scroll-mt-15">
+    <section id="contact" className="py-28 bg-linear-to-r from-emerald-200 via-emerald-100 to-orange-200 scroll-mt-15">
         <div className="max-w-5xl mx-auto px-6 text-center">
           {/* titulo */}
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900">
@@ -29,9 +29,11 @@ export const ContactSection = () => {
             </Button>
             </Link>
 
+            <Link to={ROUTES.DEMO}>
             <button className="px-8 py-4 rounded-full border border-slate-400 text-slate-800 font-medium hover:bg-white/40 transition">
             Ver Demo
             </button>
+            </Link>
         </div>
 
           {/* estadisticas */}

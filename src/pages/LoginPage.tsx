@@ -1,8 +1,9 @@
 import { Link, Navigate } from "react-router-dom";
 import { ROUTES } from "@/app/routes";
-import { logo2 } from "@/assets/images";
+import { Images } from "@/assets/images";
 import { useAuth } from "@/components/authentication/AuthProvider";
 import { useLogin } from "@/hooks/useLogin";
+import { Button } from "@/components/shared";
 
 export const LoginPage = () => {
   const auth = useAuth();
@@ -21,7 +22,7 @@ export const LoginPage = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4">
       <Link to={ROUTES.HOME} className="flex items-center gap-3">
-        <img src={logo2} alt="Logo" className="w-13 h-13 object-contain" />
+        <img src={Images.logo2} alt="Logo" className="w-13 h-13 object-contain" />
         <h1 className="text-3xl font-bold text-gray-800 tracking-tight">
           Recipe Finder
         </h1>
@@ -65,13 +66,14 @@ export const LoginPage = () => {
             />
           </div>
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-800 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+          <Button
+          type="submit"
+          disabled={loading}
+          variant="primary"
+          className="w-full"
           >
             {loading ? "Cargando..." : "Iniciar Sesión"}
-          </button>
+          </Button>
         </form>
 
         <p className="text-center text-sm text-gray-500 mt-6">

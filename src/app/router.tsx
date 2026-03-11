@@ -8,6 +8,7 @@ import { LoginPage } from "../pages/LoginPage";
 import { DashboardPage } from "../pages/DashboardPage";
 import ProtectedRoute from "@/components/authentication/ProtectedRoute";
 import { RegisterPage } from "@/pages/RegisterPage";
+import { DashboardDemoPage } from "../pages/DashboardDemoPage";
 
 export const router = createBrowserRouter([
   // landing
@@ -36,7 +37,16 @@ export const router = createBrowserRouter([
       },
     ],
   },
-
+  // dashboard demo
+  {
+    element: <PortalLayout />,
+    children: [
+      {
+        path: ROUTES.DEMO,
+        element: <DashboardDemoPage />,
+      },
+    ],
+  },
   // auth
   {
     element: <AuthLayout />,
