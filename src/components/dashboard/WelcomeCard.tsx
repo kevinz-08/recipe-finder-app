@@ -1,10 +1,8 @@
 import { Flame, ArrowRight } from "lucide-react";
+import { useAuth } from "../authentication/AuthProvider";
 
-type Props = {
-  name?: string;
-};
-
-export function WelcomeCard({ name = "Kevin" }: Props) {
+export function WelcomeCard() {
+  const auth = useAuth();
   return (
     <section
       className="
@@ -16,7 +14,6 @@ export function WelcomeCard({ name = "Kevin" }: Props) {
     >
       {/* contenido */}
       <div className="relative z-10 space-y-3 sm:space-y-4 max-w-xl">
-
         {/* racha */}
         <div className="flex items-center gap-2 text-white/90 text-xs sm:text-sm">
           <Flame size={16} />
@@ -34,7 +31,7 @@ export function WelcomeCard({ name = "Kevin" }: Props) {
           lg:text-4xl
         "
         >
-          ¡Bienvenido de vuelta, {name}! 👋
+          ¡Bienvenido de vuelta, {auth.getUser() ?.name || ""}!
         </h1>
 
         {/* subtitulo */}
@@ -47,7 +44,7 @@ export function WelcomeCard({ name = "Kevin" }: Props) {
           md:text-lg
         "
         >
-          ¿Lista para cocinar algo increíble hoy?
+          ¿List@ para cocinar algo increíble hoy?
         </p>
 
         {/* boton */}
