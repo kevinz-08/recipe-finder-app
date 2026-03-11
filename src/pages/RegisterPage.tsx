@@ -1,6 +1,6 @@
 import { Link, Navigate } from "react-router-dom";
 import { ROUTES } from "@/app/routes";
-import { logo2 } from "@/assets/images";
+import { Images } from "@/assets/images";
 import { useAuth } from "@/components/authentication/AuthProvider";
 import { useRegister } from "@/hooks/useRegister";
 import { Button } from "@/components/shared";
@@ -33,7 +33,7 @@ export const RegisterPage = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4">
       <Link to={ROUTES.HOME} className="flex items-center gap-3">
-        <img src={logo2} alt="Logo" className="w-13 h-13 object-contain" />
+        <img src={Images.logo2} alt="Logo" className="w-13 h-13 object-contain" />
         <h1 className="text-3xl font-bold text-gray-800 tracking-tight">
           Recipe Finder
         </h1>
