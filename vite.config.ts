@@ -8,8 +8,9 @@ import path from "path";
 export default defineConfig({
   plugins: [react()],
   test: {
+    globals: true,
     environment:'jsdom',
-    setupFiles: './src/tests/setup.ts'
+    setupFiles: './src/test/setup.ts'
   },
   resolve: {
     alias: {
