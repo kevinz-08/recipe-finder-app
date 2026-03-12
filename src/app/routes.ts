@@ -3,5 +3,10 @@ export const ROUTES = {
   LOGIN: '/login',
   REGISTER: '/register',
   DASHBOARD: '/dashboard',
-  DEMO: '/demo'
+  RECIPES: '/recipes',
+  FAVORITES: '/favorites',
+  PLANNER: '/planner',
+  SHOPPING_LIST: '/shopping-list',
+  PROFILE: '/profile',
+  DEMO: '/demo',
 };
