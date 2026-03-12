@@ -1,5 +1,7 @@
 import { Flame, ArrowRight } from "lucide-react";
 import { useAuth } from "../authentication/AuthProvider";
+import { Link } from "react-router-dom";
+import { ROUTES } from "@/app";
 
 export function WelcomeCard() {
   const auth = useAuth();
@@ -64,8 +66,10 @@ export function WelcomeCard() {
           hover:scale-105 transition
         "
         >
+          <Link to={ROUTES.RECIPES} className="flex flex-row gap-2 justify items-center">
           Explorar recetas
           <ArrowRight size={18} />
+          </Link>
         </button>
       </div>
 
