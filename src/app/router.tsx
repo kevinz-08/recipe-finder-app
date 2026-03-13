@@ -9,6 +9,11 @@ import { DashboardPage } from "../pages/DashboardPage";
 import ProtectedRoute from "@/components/authentication/ProtectedRoute";
 import { RegisterPage } from "@/pages/RegisterPage";
 import { DashboardDemoPage } from "../pages/DashboardDemoPage";
+import RecipesPage from "@/pages/RecipesPage";
+import FavoritePage from "@/pages/FavoritePage";
+import PlannerPage from "@/pages/PlannerPage";
+import ShoppingListPage from "@/pages/ShoppingListPage";
+import ProfilePage from "@/pages/ProfilePage";
 
 export const router = createBrowserRouter([
   // landing
@@ -22,7 +27,7 @@ export const router = createBrowserRouter([
     ],
   },
 
-  // dashboard protegido
+  // dashboard, recipes, favorite, planeador semanal, lista de compras y perfil protegido
   {
     element: <ProtectedRoute />,
     children: [
@@ -33,6 +38,26 @@ export const router = createBrowserRouter([
           path: ROUTES.DASHBOARD,
           element: <DashboardPage />,
           },
+        {
+          path: ROUTES.RECIPES,
+          element: <RecipesPage />,
+        },
+        {
+          path: ROUTES.FAVORITES,
+          element: <FavoritePage/>,
+        },
+        {
+          path: ROUTES.PLANNER,
+          element: <PlannerPage/>
+        },
+        {
+          path: ROUTES.SHOPPING_LIST,
+          element: <ShoppingListPage/>
+        },
+        {
+          path: ROUTES.PROFILE,
+          element: <ProfilePage/>
+        }
         ],
       },
     ],

@@ -1,5 +1,3 @@
-// import { Link } from "react-router-dom";
-// import { ROUTES } from "@/app/routes";
 import { StatCard } from "@/components/dashboard/StatCard";
 import { WelcomeCard } from "@/components/dashboard/WelcomeCard";
 import RecentRecipesTableCard from "@/components/dashboard/RecentRecipesTableCard";
@@ -91,7 +89,10 @@ const recipes = [
 
   return (
     <>
+    {/* card de bienvenida*/}
     <WelcomeCard></WelcomeCard>
+
+    {/*card stats*/}
     <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
         <StatCard
           title="Recetas Guardadas"
@@ -134,6 +135,7 @@ const recipes = [
         />
     </section>
 
+    {/*cards de actividad reciente y lista de compras*/}
     <section className="w-full mt-4">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2">
@@ -147,18 +149,16 @@ const recipes = [
       </div>
     </section>
     
+    {/*card de categorias populares*/}
     <section className="mt-4">
     <PopularCategoriesCard categories={categories} />
     </section>
+
+    {/*card de recetas recientes*/}
     <section className="mt-4">
       <RecipeActivityCard recipes={recipes} />
     </section>
 
-      {/* <h1 className="text-3xl font-bold text-slate-800">Dashboard</h1> */}
-
-      {/* <Link to={ROUTES.HOME} className="mt-4 text-blue-500 underline">
-        Volver a Landing
-      </Link> */}
     </>
   );
 };

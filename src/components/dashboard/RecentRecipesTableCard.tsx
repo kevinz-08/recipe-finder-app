@@ -1,13 +1,4 @@
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  ResponsiveContainer,
-  Area,
-  Tooltip,
-} from "recharts";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Area, Tooltip,} from "recharts";
 
 type RecipeActivity = {
   month: string;
@@ -29,12 +20,10 @@ const defaultData: RecipeActivity[] = [
   { month: "Mar", views: 55 },
 ];
 
-export default function RecentRecipesTableCard({
-  data = defaultData,
-}: RecentRecipesTableCardProps) {
+export default function RecentRecipesTableCard({data = defaultData,}: RecentRecipesTableCardProps) {
   return (
     <div className="bg-white rounded-2xl shadow-sm p-6 w-full">
-      {/* Header */}
+      {/* header */}
       <div className="flex items-start justify-between mb-6">
         <div>
           <h3 className="text-lg font-semibold text-gray-900">
@@ -50,7 +39,7 @@ export default function RecentRecipesTableCard({
         </span>
       </div>
 
-      {/* Chart */}
+      {/* chart */}
       <div className="w-full h-[240px]">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data}>
