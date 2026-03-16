@@ -2,7 +2,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import { MemoryRouter } from "react-router-dom";
 
-import { LoginPage } from "@/pages/LoginPage";
+import { LoginPage } from "@/pages/login/LoginPage";
 
 const loginMock = vi.fn(); // se crea una funcion falsa que reemplazara login
 

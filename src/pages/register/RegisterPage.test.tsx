@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import { MemoryRouter } from "react-router-dom";
-import { RegisterPage } from "@/pages/RegisterPage";
+import { RegisterPage } from "@/pages/register/RegisterPage";
 
 const registerMock = vi.fn(); // esto crea un mock de funcion, osea una funcion falsa que sirve para poder verificar si fue llamada
 
