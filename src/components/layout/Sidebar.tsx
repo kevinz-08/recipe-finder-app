@@ -45,7 +45,8 @@ export default function Sidebar() {
     <>
       {/* boton hamburguesa para movil */}
       <button
-        className="md:hidden fixed top-4 left-4 z-[10000] bg-white p-2 rounded-lg shadow" onClick={() => setIsOpen(true)}
+        className="md:hidden fixed top-4 left-4 z-[10000] bg-white p-2 rounded-lg shadow"
+        onClick={() => setIsOpen(true)}
       >
         <Menu size={22} />
       </button>
@@ -138,7 +139,7 @@ export default function Sidebar() {
               </div>
             </div>
 
-            <button onClick={() => setShowConfirm(true)}>
+            <button aria-label="logout" onClick={() => setShowConfirm(true)}>
               <LogOut
                 size={18}
                 className="text-gray-400 hover:text-gray-600 cursor-pointer"

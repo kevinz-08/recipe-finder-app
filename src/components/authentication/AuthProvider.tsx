@@ -23,7 +23,7 @@ interface AuthProviderProps{
 }
 
 //  Esta const es el contenedor global de toda la autenticacion, en el cual guarda diferentes cosas como:
-const AuthContext = createContext({
+export const AuthContext = createContext({
     isAuthenticated: false, // isAuthenticated, la cual verifica si el usuario esta autenticado o no 
     loading: true, // si aun esta verificando sesion
     getAccessToken: () => {}, // obtiene el token
