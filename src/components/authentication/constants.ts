@@ -1,1 +1,1 @@
-export const API_URL = "https://recipe-finder-backend-ksga.onrender.com"
+export const API_URL = "https://recipe-finder-backend-ksga.onrender.com/api"
